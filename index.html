@@ -16,55 +16,15 @@
       background: #f6fbf9;
     }
 
-    h1 {
-      font-size: 2.4em;
-      font-weight: normal;
-      margin-bottom: 0.1em;
-    }
-
-    h2 {
-      font-size: 1.3em;
-      margin-top: 2.5em;
-      margin-bottom: 0.8em;
-      font-weight: normal;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #3e5f5a;
-    }
-
-    p, li {
-      margin: 0.6em 0;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .header {
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .header-text {
-      flex: 1;
-    }
-
-    .portrait {
-      width: 160px;
-      height: auto;
-    }
-
-    a {
-      color: #1f3f3a;
-      text-decoration: none;
-      border-bottom: 1px solid #9bbab4;
-    }
-
-    a:hover {
-      border-bottom: 1px solid #1f3f3a;
-    }
+    h1 { font-size: 2.4em; font-weight: normal; margin-bottom: 0.1em; }
+    h2 { font-size: 1.3em; margin-top: 2.5em; margin-bottom: 0.8em; font-weight: normal; letter-spacing: 0.03em; text-transform: uppercase; color: #3e5f5a; }
+    p, li { margin: 0.6em 0; }
+    ul { list-style: none; padding-left: 0; }
+    .header { display: flex; align-items: flex-start; gap: 40px; }
+    .header-text { flex: 1; }
+    .portrait { width: 160px; height: auto; }
+    a { color: #1f3f3a; text-decoration: none; border-bottom: 1px solid #9bbab4; }
+    a:hover { border-bottom: 1px solid #1f3f3a; }
 
     /* Kontaktformular ausblenden */
     #contact-form {
@@ -76,59 +36,15 @@
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-
-    #contact-form label {
-      display: block;
-      margin-bottom: 0.3em;
-      font-weight: bold;
-      color: #3e5f5a;
+    #contact-form label { display: block; margin-bottom: 0.3em; font-weight: bold; color: #3e5f5a; }
+    #contact-form input, #contact-form textarea {
+      width: 100%; padding: 0.5em; margin-bottom: 0.8em; border: 1px solid #cbd8d2; border-radius: 6px; font-family: Georgia, "Times New Roman", serif; font-size: 1em; color: #0f1f1d; background-color: #f6fbf9;
     }
+    #contact-form input:focus, #contact-form textarea:focus { outline: none; border-color: #3e5f5a; background-color: #ffffff; }
+    #contact-form button { background-color: #3e5f5a; color: #ffffff; border: none; padding: 0.6em 1.2em; font-size: 1em; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; }
+    #contact-form button:hover { background-color: #2f4c44; }
 
-    #contact-form input,
-    #contact-form textarea {
-      width: 100%;
-      padding: 0.5em;
-      margin-bottom: 0.8em;
-      border: 1px solid #cbd8d2;
-      border-radius: 6px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1em;
-      color: #0f1f1d;
-      background-color: #f6fbf9;
-    }
-
-    #contact-form input:focus,
-    #contact-form textarea:focus {
-      outline: none;
-      border-color: #3e5f5a;
-      background-color: #ffffff;
-    }
-
-    #contact-form button {
-      background-color: #3e5f5a;
-      color: #ffffff;
-      border: none;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    #contact-form button:hover {
-      background-color: #2f4c44;
-    }
-
-    /* mobile */
-    @media (max-width: 700px) {
-      .header {
-        flex-direction: column;
-      }
-
-      .portrait {
-        width: 120px;
-      }
-    }
+    @media (max-width: 700px) { .header { flex-direction: column; } .portrait { width: 120px; } }
   </style>
 </head>
 
@@ -137,19 +53,13 @@
   <div class="header">
     <div class="header-text">
       <h1>Julian Prugger</h1>
-      <p class="subtitle">
-        Philosoph · Doktorand an der Hochschule für Philosophie München
-      </p>
+      <p class="subtitle">Philosoph · Doktorand an der Hochschule für Philosophie München</p>
     </div>
-
     <img src="portrait.jpeg" alt="Julian Prugger" class="portrait">
   </div>
 
   <h2>Über</h2>
-  <p>
-    Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München.
-    Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.
-  </p>
+  <p>Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München. Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.</p>
 
   <h2>Forschung</h2>
   <ul>
@@ -160,51 +70,46 @@
 
   <h2>Publikationen</h2>
   <div class="pub">
-    Prugger, Julian (2025): 
-    <span class="pub-title">Titel des Aufsatzes</span>. 
-    <span class="pub-journal">Zeitschrift / Verlag</span>.
-    <br>
+    Prugger, Julian (2025): <span class="pub-title">Titel des Aufsatzes</span>. <span class="pub-journal">Zeitschrift / Verlag</span>.<br>
     <a href="#">[Link]</a>
   </div>
 
-  <h2>
-    <a href="cv.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">
-      Lebenslauf
-    </a>
-  </h2>
+  <h2><a href="cv.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">Lebenslauf</a></h2>
 
- <!-- Klickbare Überschrift für Kontakt -->
-<h2>
-  <a href="#" id="contact-link" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">
-    Kontakt
-  </a>
-</h2>
+  <!-- Klickbare Überschrift für Kontakt -->
+  <h2><a href="#" id="contact-link" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">Kontakt</a></h2>
 
-<!-- Ausklappbares Kontaktformular -->
-<form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
+  <!-- Ausklappbares Kontaktformular -->
+  <form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-  <label for="email">E-Mail:</label>
-  <input type="email" id="email" name="_replyto" required>
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="_replyto" required>
 
-  <label for="message">Nachricht:</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Nachricht:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-  <button type="submit">Absenden</button>
-</form>
+    <button type="submit">Absenden</button>
+  </form>
 
-<script>
-  const contactLink = document.getElementById('contact-link');
-  const contactForm = document.getElementById('contact-form');
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactLink = document.getElementById('contact-link');
+      const contactForm = document.getElementById('contact-form');
 
-  contactLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-    if(contactForm.style.display === 'block') {
-      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-</script>
+      contactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Toggle Sichtbarkeit
+        if(contactForm.style.display === 'none' || contactForm.style.display === '') {
+          contactForm.style.display = 'block';
+          contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          contactForm.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
