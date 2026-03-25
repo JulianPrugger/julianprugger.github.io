@@ -13,7 +13,22 @@
       padding: 0 24px;
       line-height: 1.7;
       color: #0f1f1d;
-      background: #f8fdfb; /* ganz zartes Mintgrün */
+      background: #f6fbf9;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 0.9em;
+    }
+
+    .lang-switch a {
+      margin-left: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+      color: #1f3f3a;
     }
 
     h1 {
@@ -48,7 +63,7 @@
     }
 
     li {
-      margin-bottom: 1em;
+      margin-bottom: 0.6em;
     }
 
     .pub {
@@ -72,57 +87,133 @@
     a:hover {
       border-bottom: 1px solid #1f3f3a;
     }
+
+    .lang {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
 
-  <h1>Julian Prugger</h1>
-  <p class="subtitle">
-    Philosoph · Doktorand an der Hochschule für Philosophie München
-  </p>
-
-<h2>Über</h2>
-<p>
-  Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München.
-  Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.
-</p>
-
-  <h2>Forschung</h2>
-  <p>Aktuelle Arbeitsgebiete:</p>
-  <ul>
-    <li>– Thema oder Konzept 1</li>
-    <li>– Thema oder Konzept 2</li>
-    <li>– Thema oder Konzept 3</li>
-  </ul>
-
-  <h2>Publikationen</h2>
-
-  <div class="pub">
-    Prugger, Julian (2025): 
-    <span class="pub-title">Titel des Aufsatzes</span>. 
-    <span class="pub-journal">Zeitschrift / Verlag</span>.
-    <br>
-    <a href="#">[Link]</a>
+  <!-- Sprachumschaltung -->
+  <div class="lang-switch">
+    <a onclick="showLang('de')">DE</a> |
+    <a onclick="showLang('en')">EN</a>
   </div>
 
-  <div class="pub">
-    Prugger, Julian (2024): 
-    <span class="pub-title">Titel des Buchkapitels</span>. 
-    In: Herausgeber (Hg.), <span class="pub-title">Buchtitel</span>. Verlag.
+  <!-- DEUTSCH -->
+  <div id="de" class="lang active">
+
+    <h1>Julian Prugger</h1>
+    <p class="subtitle">
+      Philosoph · Doktorand an der Hochschule für Philosophie München
+    </p>
+
+    <h2>Über</h2>
+    <p>
+      Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München.
+      Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.
+    </p>
+
+    <h2>Forschung</h2>
+    <p>Aktuelle Arbeitsgebiete:</p>
+    <ul>
+      <li>– Thema oder Konzept 1</li>
+      <li>– Thema oder Konzept 2</li>
+      <li>– Thema oder Konzept 3</li>
+    </ul>
+
+    <h2>Publikationen</h2>
+
+    <div class="pub">
+      Prugger, Julian (2025): 
+      <span class="pub-title">Titel des Aufsatzes</span>. 
+      <span class="pub-journal">Zeitschrift / Verlag</span>.
+      <br>
+      <a href="#">[Link]</a>
+    </div>
+
+    <div class="pub">
+      Prugger, Julian (2024): 
+      <span class="pub-title">Titel des Buchkapitels</span>. 
+      In: Herausgeber (Hg.), <span class="pub-title">Buchtitel</span>. Verlag.
+    </div>
+
+    <h2>Lebenslauf</h2>
+    <p>
+      <a href="cv.pdf">Curriculum Vitae (PDF)</a>
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
+    </p>
+
   </div>
 
-  <h2>Lebenslauf</h2>
-  <p>
-    <a href="cv.pdf">Curriculum Vitae (PDF)</a>
-  </p>
+  <!-- ENGLISH -->
+  <div id="en" class="lang">
 
-  <h2>Kontakt</h2>
-  <p>
-    E-Mail: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
-  </p>
+    <h1>Julian Prugger</h1>
+    <p class="subtitle">
+      Philosopher · Doctoral Researcher at the Munich School of Philosophy
+    </p>
 
-  <p><a href="en.html">English</a></p>
+    <h2>About</h2>
+    <p>
+      I am a doctoral researcher in philosophy at the Munich School of Philosophy.
+      My research focuses on critical theory and moral philosophy.
+    </p>
+
+    <h2>Research</h2>
+    <p>Current areas of work:</p>
+    <ul>
+      <li>– Topic or concept 1</li>
+      <li>– Topic or concept 2</li>
+      <li>– Topic or concept 3</li>
+    </ul>
+
+    <h2>Publications</h2>
+
+    <div class="pub">
+      Prugger, Julian (2025): 
+      <span class="pub-title">Title of article</span>. 
+      <span class="pub-journal">Journal / Publisher</span>.
+      <br>
+      <a href="#">[Link]</a>
+    </div>
+
+    <div class="pub">
+      Prugger, Julian (2024): 
+      <span class="pub-title">Title of book chapter</span>. 
+      In: Editor (ed.), <span class="pub-title">Book Title</span>. Publisher.
+    </div>
+
+    <h2>Curriculum Vitae</h2>
+    <p>
+      <a href="cv.pdf">Download CV (PDF)</a>
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
+    </p>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    function showLang(lang) {
+      document.getElementById('de').classList.remove('active');
+      document.getElementById('en').classList.remove('active');
+      document.getElementById(lang).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
