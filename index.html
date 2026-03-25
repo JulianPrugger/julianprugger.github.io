@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julian Prugger</title>
-
   <style>
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -15,7 +14,6 @@
       color: #0f1f1d;
       background: #f6fbf9;
     }
-
     h1 { font-size: 2.4em; font-weight: normal; margin-bottom: 0.1em; }
     h2 { font-size: 1.3em; margin-top: 2.5em; margin-bottom: 0.8em; font-weight: normal; letter-spacing: 0.03em; text-transform: uppercase; color: #3e5f5a; }
     p, li { margin: 0.6em 0; }
@@ -26,7 +24,7 @@
     a { color: #1f3f3a; text-decoration: none; border-bottom: 1px solid #9bbab4; }
     a:hover { border-bottom: 1px solid #1f3f3a; }
 
-    /* Kontaktformular ausblenden */
+    /* Kontaktformular */
     #contact-form {
       display: none;
       margin-top: 1em;
@@ -44,10 +42,11 @@
     #contact-form button { background-color: #3e5f5a; color: #ffffff; border: none; padding: 0.6em 1.2em; font-size: 1em; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; }
     #contact-form button:hover { background-color: #2f4c44; }
 
+    footer { margin-top: 3em; font-size: 0.9em; color: #3e5f5a; }
+
     @media (max-width: 700px) { .header { flex-direction: column; } .portrait { width: 120px; } }
   </style>
 </head>
-
 <body>
 
   <div class="header">
@@ -74,10 +73,10 @@
     <a href="#">[Link]</a>
   </div>
 
-  <h2><a href="cv.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">Lebenslauf</a></h2>
+  <h2><a href="cv.html">Lebenslauf</a></h2>
 
   <!-- Klickbare Überschrift für Kontakt -->
-  <h2><a href="#" id="contact-link" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">Kontakt</a></h2>
+  <h2><a href="#" id="contact-link">Kontakt</a></h2>
 
   <!-- Ausklappbares Kontaktformular -->
   <form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
@@ -93,21 +92,18 @@
     <button type="submit">Absenden</button>
   </form>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const contactLink = document.getElementById('contact-link');
-      const contactForm = document.getElementById('contact-form');
+  <footer>
+    <a href="impressum.html">Impressum</a> | 
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
 
-      contactLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Toggle Sichtbarkeit
-        if(contactForm.style.display === 'none' || contactForm.style.display === '') {
-          contactForm.style.display = 'block';
-          contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          contactForm.style.display = 'none';
-        }
-      });
+  <script>
+    const contactLink = document.getElementById('contact-link');
+    const contactForm = document.getElementById('contact-form');
+    contactLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
+      if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   </script>
 
