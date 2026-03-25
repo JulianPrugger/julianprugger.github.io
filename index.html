@@ -16,19 +16,29 @@
       background: #f6fbf9;
     }
 
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 0.9em;
+    h1 {
+      font-size: 2.4em;
+      font-weight: normal;
+      margin-bottom: 0.1em;
     }
 
-    .lang-switch a {
-      margin-left: 10px;
-      cursor: pointer;
-      border-bottom: 1px solid #9bbab4;
-      color: #1f3f3a;
-      text-decoration: none;
+    h2 {
+      font-size: 1.3em;
+      margin-top: 2.5em;
+      margin-bottom: 0.8em;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3e5f5a;
+    }
+
+    p, li {
+      margin: 0.6em 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
 
     .header {
@@ -46,53 +56,6 @@
       height: auto;
     }
 
-    h1 {
-      font-size: 2.4em;
-      font-weight: normal;
-      margin-bottom: 0.1em;
-    }
-
-    .subtitle {
-      color: #4f6f6a;
-      margin-bottom: 2em;
-      font-size: 1.05em;
-    }
-
-    h2 {
-      font-size: 1.3em;
-      margin-top: 2.5em;
-      margin-bottom: 0.8em;
-      font-weight: normal;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #3e5f5a;
-    }
-
-    p {
-      margin: 0.6em 0;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 0.6em;
-    }
-
-    .pub {
-      margin-bottom: 1.2em;
-    }
-
-    .pub-title {
-      font-style: italic;
-    }
-
-    .pub-journal {
-      color: #3e5f5a;
-    }
-
     a {
       color: #1f3f3a;
       text-decoration: none;
@@ -101,14 +64,6 @@
 
     a:hover {
       border-bottom: 1px solid #1f3f3a;
-    }
-
-    .lang {
-      display: none;
-    }
-
-    .active {
-      display: block;
     }
 
     /* mobile */
@@ -126,117 +81,50 @@
 
 <body>
 
-  <div class="lang-switch">
-    <a onclick="showLang('de')">DE</a> |
-    <a onclick="showLang('en')">EN</a>
+  <div class="header">
+    <div class="header-text">
+      <h1>Julian Prugger</h1>
+      <p class="subtitle">
+        Philosoph · Doktorand an der Hochschule für Philosophie München
+      </p>
+    </div>
+
+    <img src="portrait.jpeg" alt="Julian Prugger" class="portrait">
   </div>
 
-  <!-- DE -->
-  <div id="de" class="lang active">
+  <h2>Über</h2>
+  <p>
+    Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München.
+    Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.
+  </p>
 
-    <div class="header">
-      <div class="header-text">
-        <h1>Julian Prugger</h1>
-        <p class="subtitle">
-          Philosoph · Doktorand an der Hochschule für Philosophie München
-        </p>
-      </div>
+  <h2>Forschung</h2>
+  <ul>
+    <li>– Thema oder Konzept 1</li>
+    <li>– Thema oder Konzept 2</li>
+    <li>– Thema oder Konzept 3</li>
+  </ul>
 
-      <img src="portrait.jpeg" alt="Julian Prugger" class="portrait">
-    </div>
-
-    <h2>Über</h2>
-    <p>
-      Ich bin Doktorand der Philosophie an der Hochschule für Philosophie München.
-      Meine Forschungsschwerpunkte liegen im Bereich der kritischen Theorie und der Moralphilosophie.
-    </p>
-
-    <h2>Forschung</h2>
-    <ul>
-      <li>– Thema oder Konzept 1</li>
-      <li>– Thema oder Konzept 2</li>
-      <li>– Thema oder Konzept 3</li>
-    </ul>
-
-    <h2>Publikationen</h2>
-
-    <div class="pub">
-      Prugger, Julian (2025): 
-      <span class="pub-title">Titel des Aufsatzes</span>. 
-      <span class="pub-journal">Zeitschrift / Verlag</span>.
-      <br>
-      <a href="#">[Link]</a>
-    </div>
-
-    <h2>
-      <a href="cv.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">
-        Lebenslauf
-      </a>
-    </h2>
-
-    <h2>Kontakt</h2>
-    <p>
-      E-Mail: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
-    </p>
-
+  <h2>Publikationen</h2>
+  <div class="pub">
+    Prugger, Julian (2025): 
+    <span class="pub-title">Titel des Aufsatzes</span>. 
+    <span class="pub-journal">Zeitschrift / Verlag</span>.
+    <br>
+    <a href="#">[Link]</a>
   </div>
 
-  <!-- EN -->
-  <div id="en" class="lang">
+  <!-- Klickbare Überschrift zum CV -->
+  <h2>
+    <a href="cv.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid #9bbab4;">
+      Lebenslauf
+    </a>
+  </h2>
 
-    <div class="header">
-      <div class="header-text">
-        <h1>Julian Prugger</h1>
-        <p class="subtitle">
-          Philosopher · Doctoral Researcher at the Munich School of Philosophy
-        </p>
-      </div>
-
-      <img src="portrait.jpg" alt="Julian Prugger" class="portrait">
-    </div>
-
-    <h2>About</h2>
-    <p>
-      I am a doctoral researcher in philosophy at the Munich School of Philosophy.
-      My research focuses on critical theory and moral philosophy.
-    </p>
-
-    <h2>Research</h2>
-    <ul>
-      <li>– Topic or concept 1</li>
-      <li>– Topic or concept 2</li>
-      <li>– Topic or concept 3</li>
-    </ul>
-
-    <h2>Publications</h2>
-
-    <div class="pub">
-      Prugger, Julian (2025): 
-      <span class="pub-title">Title of article</span>. 
-      <span class="pub-journal">Journal / Publisher</span>.
-      <br>
-      <a href="#">[Link]</a>
-    </div>
-
-    <h2>Curriculum Vitae</h2>
-    <p>
-      <a href="cv.pdf">Download CV (PDF)</a>
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
-    </p>
-
-  </div>
-
-  <script>
-    function showLang(lang) {
-      document.getElementById('de').classList.remove('active');
-      document.getElementById('en').classList.remove('active');
-      document.getElementById(lang).classList.add('active');
-    }
-  </script>
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a href="mailto:j.prugger@posteo.de">j.prugger@posteo.de</a>
+  </p>
 
 </body>
 </html>
