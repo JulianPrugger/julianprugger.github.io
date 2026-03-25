@@ -127,6 +127,19 @@
   </a>
 </h2>
 
+  <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" style="margin-top:1em;">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required style="width:100%; margin-bottom:0.5em;"><br>
+
+  <label for="email">E-Mail:</label><br>
+  <input type="email" id="email" name="_replyto" required style="width:100%; margin-bottom:0.5em;"><br>
+
+  <label for="message">Nachricht:</label><br>
+  <textarea id="message" name="message" rows="5" required style="width:100%; margin-bottom:0.5em;"></textarea><br>
+
+  <button type="submit" style="padding:0.5em 1em;">Absenden</button>
+</form>
+
 <div id="contact-form" style="display:none; margin-top:1em;">
   <!-- Formular wie oben hier einfügen -->
 </div>
