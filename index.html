@@ -115,4 +115,69 @@
   </script>
 
 </body>
+
+  <!-- Direkt unter <body> einfügen -->
+<nav class="top-nav">
+  <ul>
+    <li><a href="index.html">Über mich</a></li>
+    <li><a href="cv.html">Werdegang</a></li>
+    <li><a href="pubs.html">Publikationen</a></li>
+    <li><a href="Vorträge.html">Vorträge</a></li>
+    <li><a href="seminare.html">Seminare & Workshops</a></li>
+    <li><a href="essays.html">Essays & Interviews</a></li>
+    <li><a href="#" id="contact-link-nav">Kontakt</a></li>
+  </ul>
+</nav>
+
+<style>
+/* Navigation oben */
+.top-nav {
+  position: sticky;
+  top: 0;
+  background-color: #f6fbf9; /* dezenter Hintergrund passend zum Body */
+  border-bottom: 1px solid #cbd8d2;
+  padding: 0.6em 24px;
+  z-index: 100;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.top-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.top-nav a {
+  color: #1f3f3a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-size: 0.95em;
+  transition: border-color 0.2s;
+}
+
+.top-nav a:hover {
+  border-bottom: 1px solid #1f3f3a;
+}
+
+/* Für mobile Geräte */
+@media (max-width: 700px) {
+  .top-nav ul {
+    flex-direction: column;
+    gap: 0.6em;
+  }
+}
+</style>
+
+<script>
+// Kontaktlink in Navigation
+const contactLinkNav = document.getElementById('contact-link-nav');
+contactLinkNav.addEventListener('click', function(e) {
+  e.preventDefault();
+  contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
+  if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+});
+</script>
 </html>
