@@ -58,20 +58,18 @@
 </head>
 
 <body>
-<!-- Navigation oben (einfügen auf allen Unterseiten) -->
-<nav class="top-nav">
-  <ul>
-    <li><a href="index.html">Über mich</a></li>
-    <li><a href="cv.html">Werdegang</a></li>
-    <li><a href="pubs.html">Publikationen</a></li>
-    <li><a href="Vorträge.html">Vorträge</a></li>
-    <li><a href="seminare.html">Seminare & Workshops</a></li>
-    <li><a href="essays.html">Essays & Interviews</a></li>
-    <li><a href="#" id="contact-link-nav">Kontakt</a></li>
-  </ul>
-</nav>
+<div id="nav-container"></div>
+
+<script>
+  fetch('nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-container').innerHTML = data;
+    })
+    .catch(err => console.error('Fehler beim Laden der Navigation:', err));
+</script>
   
-  <h1>Lebenslauf</h1>
+  <h1>Werdegang</h1>
 
   <div class="section">
     <h2>Persönliche Daten</h2>
