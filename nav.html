@@ -1,1 +1,38 @@
+<!-- nav.html -->
+<nav class="top-nav">
+  <ul>
+    <li><a href="index.html">Über mich</a></li>
+    <li><a href="cv.html">Werdegang</a></li>
+    <li><a href="pubs.html">Publikationen</a></li>
+    <li><a href="Vorträge.html">Vorträge</a></li>
+    <li><a href="seminare.html">Seminare & Workshops</a></li>
+    <li><a href="essays.html">Essays & Interviews</a></li>
+    <li><a href="#" id="contact-link-nav">Kontakt</a></li>
+  </ul>
+</nav>
 
+<form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST" style="display:none;">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">E-Mail:</label>
+  <input type="email" id="email" name="_replyto" required>
+
+  <label for="message">Nachricht:</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <button type="submit">Absenden</button>
+</form>
+
+<script>
+  const contactLinkNav = document.getElementById('contact-link-nav');
+  const contactForm = document.getElementById('contact-form');
+
+  contactLinkNav.addEventListener('click', function(e) {
+    e.preventDefault();
+    contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
+    if(contactForm.style.display === 'block') { 
+      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+    }
+  });
+</script>
