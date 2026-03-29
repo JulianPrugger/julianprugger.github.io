@@ -8,17 +8,19 @@
     body {
       font-family: Georgia, "Times New Roman", serif;
       max-width: 900px;
-      margin: 80px auto;
+      margin: 0 auto;
       padding: 0 24px;
       line-height: 1.7;
       color: #0f1f1d;
       background: #f6fbf9;
     }
+
     h1 { font-size: 2.4em; font-weight: normal; margin-bottom: 0.1em; }
     h2 { font-size: 1.3em; margin-top: 2.5em; margin-bottom: 0.8em; font-weight: normal; letter-spacing: 0.03em; text-transform: uppercase; color: #3e5f5a; }
     p, li { margin: 0.6em 0; }
     ul { list-style: none; padding-left: 0; }
-    .header { display: flex; align-items: flex-start; gap: 40px; }
+
+    .header { display: flex; align-items: flex-start; gap: 40px; margin-top: 1em; }
     .header-text { flex: 1; }
     .portrait { width: 160px; height: auto; }
     a { color: #1f3f3a; text-decoration: none; border-bottom: 1px solid #9bbab4; }
@@ -44,10 +46,60 @@
 
     footer { margin-top: 3em; font-size: 0.9em; color: #3e5f5a; }
 
-    @media (max-width: 700px) { .header { flex-direction: column; } .portrait { width: 120px; } }
+    /* Navigation oben */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      background-color: #f6fbf9;
+      border-bottom: 1px solid #cbd8d2;
+      padding: 0.6em 24px;
+      z-index: 100;
+      font-family: Georgia, "Times New Roman", serif;
+      margin-bottom: 1em;
+    }
+
+    .top-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2em;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.95em;
+    }
+
+    .top-nav a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .top-nav a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
+
+    @media (max-width: 700px) {
+      .header { flex-direction: column; }
+      .portrait { width: 120px; }
+      .top-nav ul { flex-direction: column; gap: 0.6em; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation ganz oben -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Über mich</a></li>
+      <li><a href="cv.html">Werdegang</a></li>
+      <li><a href="pubs.html">Publikationen</a></li>
+      <li><a href="Vorträge.html">Vorträge</a></li>
+      <li><a href="seminare.html">Seminare & Workshops</a></li>
+      <li><a href="essays.html">Essays & Interviews</a></li>
+      <li><a href="#" id="contact-link-nav">Kontakt</a></li>
+    </ul>
+  </nav>
 
   <div class="header">
     <div class="header-text">
@@ -57,35 +109,9 @@
     <img src="portrait.jpg" alt="Julian Prugger" class="portrait">
   </div>
 
-  <h2>Über mich</h2>
-  <p>Ich forsche interdisziplinär und transdisziplinär an der Schnittstelle von Philosophie und Public Health und versuche, wissenschaftliche Arbeit mit transformativem Handeln zu verbinden. Derzeit schließe ich meine Promotion ab, in der ich Selbstkritik als politische Praxis philosophisch rekonstruiere. Im Rahmen eines DFG-Projekts habe ich zu evidenzbasierter Gesundheitspolitik geforscht und publiziert – mit besonderem Interesse an der Frage, wie demokratische Legitimität und wissenschaftliche Expertise in Krisenzeiten zusammenwirken. Mich beschäftigt dabei auch, wie soziale Bewegungen und zivilgesellschaftliche Akteure an solchen Prozessen mitwirken können. In meiner zukünftigen Forschung möchte ich den Fokus stärker auf partizipative Ansätze legen – und auf die Frage, wie Wissenschaft aktiv zu gesellschaftlichem Wandel beitragen kann.</p>
+  <!-- Hauptinhalt hier -->
 
-<h2>Forschung</h2>
-
-<p><strong>Kritische Theorie und politische Philosophie.</strong> Meine theoretischen Grundlagen liegen in kritischer Theorie, insbesondere bei Foucault, sowie bei feministischen und analytisch-sozialen Ontologien (u.a. Haslanger). Hinzu kommen postkoloniale Ansätze und radikaldemokratische Theorien, mit denen ich Fragen von Macht, Subjektivität und widerständigem Handeln bearbeite.</p>
-
-<p><strong>Selbstkritik als politische Praxis.</strong> Im Mittelpunkt meiner Dissertation steht die philosophische Rekonstruktion von Selbstkritik als verkörperter, relationaler und politisch wirksamer Praxis – in Auseinandersetzung mit Foucault, psychoanalytischen Ansätzen, feministischer Theorie sowie postkolonialen Perspektiven (u.a. Amy Allen, Frantz Fanon, Nikia Dhawan).</p>
-
-<p><strong>Wissen, Demokratie und Public Health.</strong> Welches Wissen gilt als Evidenz, wer entscheidet darüber und wie verstehen Wissenschaftler*nnen ihre eigene Rolle in diesem Prozess? Ausgehend von qualitativen Studien zu Selbstbildern von Public-Health-Wissenschaftler:innen habe ich diese Befunde zusammen mit Kolleg*innen philosophisch rekonstruiert. Der Fokus lag dabei auf der COVID-19-Pandemie als Verdichtungspunkt dieser Spannungen sowie auf der Frage der Preparedness für zukünftige Krisen.</p>
-
-<p><strong>Versicherheitlichung und Sicherheitspolitik.</strong> Wie werden soziale Probleme wie Armut oder Migration zu Sicherheitsfragen umgedeutet, und welche Ausschlüsse produziert das? Ich bearbeite diese Fragen sowohl theoretisch als auch an konkreten Fallbeispielen wie Polizeigesetzen oder der Münchner Kommunalpolitik. Dabei interessieren mich auch alternative Sicherheitskonzepte, die Schutz und gesellschaftliche Teilhabe jenseits von Kontrolle und Ausgrenzung denken.</p>
-
-<p><strong>Vertrauen in Wissenschaft und KI.</strong> In Zusammenarbeit mit Kolleg:innen habe ich zur Rolle von Vertrauen geforscht, insbesondere dazu, wie sich Vertrauen unter den Bedingungen von KI-Systemen verändert und wie das Mensch-Maschine-Verhältnis etablierte Vertrauensparadigmen herausfordert. Darüber innteressierte uns, welche Rolle Vertrauen in wissensbasierten Demokratien spielt – etwa am Beispiel der COVID-19-Pandemie oder der AIDS-Krise, in denen das Verhältnis zwischen Öffentlichkeit, Wissenschaft und Politik auf besondere Weise auf dem Spiel stand.</p>
-
-  <h2><a href="cv.html">Werdegang</a></h2>
-
-  <h2><a href="pubs.html">Publikationen</a></h2>
-
-  <h2><a href="Vorträge.html">Vorträge</a></h2>
-
-  <h2><a href="seminare.html">Seminare & Workshops</a></h2>
-
-  <h2><a href="essays.html">Essays, Interviews & Thesenpapiere</a></h2>
-
-  <!-- Klickbare Überschrift für Kontakt -->
-  <h2><a href="#" id="contact-link">Kontakt</a></h2>
-
-  <!-- Ausklappbares Kontaktformular -->
+  <!-- Kontaktformular -->
   <form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
@@ -105,79 +131,24 @@
   </footer>
 
   <script>
-    const contactLink = document.getElementById('contact-link');
+    const contactLinkNav = document.getElementById('contact-link-nav');
     const contactForm = document.getElementById('contact-form');
-    contactLink.addEventListener('click', function(e) {
+
+    contactLinkNav.addEventListener('click', function(e) {
       e.preventDefault();
       contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
       if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
+
+    const contactLink = document.getElementById('contact-link');
+    if(contactLink){
+      contactLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
+        if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    }
   </script>
 
 </body>
-
-  <!-- Direkt unter <body> einfügen -->
-<nav class="top-nav">
-  <ul>
-    <li><a href="index.html">Über mich</a></li>
-    <li><a href="cv.html">Werdegang</a></li>
-    <li><a href="pubs.html">Publikationen</a></li>
-    <li><a href="Vorträge.html">Vorträge</a></li>
-    <li><a href="seminare.html">Seminare & Workshops</a></li>
-    <li><a href="essays.html">Essays & Interviews</a></li>
-    <li><a href="#" id="contact-link-nav">Kontakt</a></li>
-  </ul>
-</nav>
-
-<style>
-/* Navigation oben */
-.top-nav {
-  position: sticky;
-  top: 0;
-  background-color: #f6fbf9; /* dezenter Hintergrund passend zum Body */
-  border-bottom: 1px solid #cbd8d2;
-  padding: 0.6em 24px;
-  z-index: 100;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.top-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2em;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.top-nav a {
-  color: #1f3f3a;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  font-size: 0.95em;
-  transition: border-color 0.2s;
-}
-
-.top-nav a:hover {
-  border-bottom: 1px solid #1f3f3a;
-}
-
-/* Für mobile Geräte */
-@media (max-width: 700px) {
-  .top-nav ul {
-    flex-direction: column;
-    gap: 0.6em;
-  }
-}
-</style>
-
-<script>
-// Kontaktlink in Navigation
-const contactLinkNav = document.getElementById('contact-link-nav');
-contactLinkNav.addEventListener('click', function(e) {
-  e.preventDefault();
-  contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-  if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-});
-</script>
 </html>
