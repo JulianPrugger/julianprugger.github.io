@@ -88,17 +88,18 @@
 </head>
 <body>
 
- <div id="nav-container"></div>
+  <!-- Navigation -->
+  <div id="nav-container"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+      })
+      .catch(err => console.error('Fehler beim Laden der Navigation:', err));
+  </script>
 
-<script>
-  fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('nav-container').innerHTML = data;
-    })
-    .catch(err => console.error('Fehler beim Laden der Navigation:', err));
-</script>
-
+  <!-- Header -->
   <div class="header">
     <div class="header-text">
       <h1>Julian Prugger</h1>
@@ -107,9 +108,21 @@
     <img src="portrait.jpg" alt="Julian Prugger" class="portrait">
   </div>
 
-  <!-- Hauptinhalt hier -->
+  <!-- Über mich -->
+  <h2>Über mich</h2>
+  <p>Ich forsche interdisziplinär und transdisziplinär an der Schnittstelle von Philosophie und Public Health und versuche, wissenschaftliche Arbeit mit transformativem Handeln zu verbinden. Derzeit schließe ich meine Promotion ab, in der ich Selbstkritik als politische Praxis philosophisch rekonstruiere. Im Rahmen eines DFG-Projekts habe ich zu evidenzbasierter Gesundheitspolitik geforscht und publiziert – mit besonderem Interesse an der Frage, wie demokratische Legitimität und wissenschaftliche Expertise in Krisenzeiten zusammenwirken. Mich beschäftigt dabei auch, wie soziale Bewegungen und zivilgesellschaftliche Akteure an solchen Prozessen mitwirken können. In meiner zukünftigen Forschung möchte ich den Fokus stärker auf partizipative Ansätze legen – und auf die Frage, wie Wissenschaft aktiv zu gesellschaftlichem Wandel beitragen kann.</p>
 
-  <!-- Kontaktformular -->
+  <!-- Forschung -->
+  <h2>Forschungsschwerpunkte</h2>
+  <ul>
+    <li><strong>Kritische Theorie und politische Philosophie:</strong> Meine theoretischen Grundlagen liegen in kritischer Theorie, insbesondere bei Foucault, sowie bei feministischen und analytisch-sozialen Ontologien (u.a. Haslanger). Hinzu kommen postkoloniale Ansätze und radikaldemokratische Theorien, mit denen ich Fragen von Macht, Subjektivität und widerständigem Handeln bearbeite.</li>
+    <li><strong>Selbstkritik als politische Praxis:</strong> Im Mittelpunkt meiner Dissertation steht die philosophische Rekonstruktion von Selbstkritik als verkörperter, relationaler und politisch wirksamer Praxis – in Auseinandersetzung mit Foucault, psychoanalytischen Ansätzen, feministischer Theorie sowie postkolonialen Perspektiven (u.a. Amy Allen, Frantz Fanon, Nikia Dhawan).</li>
+    <li><strong>Wissen, Demokratie und Public Health:</strong> Ausgehend von qualitativen Studien zu Selbstbildern von Public-Health-Wissenschaftler:innen habe ich diese Befunde zusammen mit Kolleg:innen philosophisch rekonstruiert. Der Fokus lag auf der COVID-19-Pandemie und auf der Frage der Preparedness für zukünftige Krisen.</li>
+    <li><strong>Versicherheitlichung und Sicherheitspolitik:</strong> Wie werden soziale Probleme wie Armut oder Migration zu Sicherheitsfragen umgedeutet, und welche Ausschlüsse produziert das? Ich bearbeite diese Fragen sowohl theoretisch als auch an konkreten Fallbeispielen wie Polizeigesetzen oder der Münchner Kommunalpolitik.</li>
+    <li><strong>Vertrauen in Wissenschaft und KI:</strong> In Zusammenarbeit mit Kolleg:innen habe ich zur Rolle von Vertrauen geforscht, insbesondere dazu, wie sich Vertrauen unter den Bedingungen von KI-Systemen verändert und welche Rolle Vertrauen in wissensbasierten Demokratien spielt – z.B. am Beispiel COVID-19 oder AIDS.</li>
+  </ul>
+
+  <!-- Kontaktformular (falls nav.html nicht geladen) -->
   <form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
@@ -132,15 +145,8 @@
     const contactLinkNav = document.getElementById('contact-link-nav');
     const contactForm = document.getElementById('contact-form');
 
-    contactLinkNav.addEventListener('click', function(e) {
-      e.preventDefault();
-      contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-      if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-
-    const contactLink = document.getElementById('contact-link');
-    if(contactLink){
-      contactLink.addEventListener('click', function(e) {
+    if(contactLinkNav){
+      contactLinkNav.addEventListener('click', function(e) {
         e.preventDefault();
         contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
         if(contactForm.style.display === 'block') { contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
