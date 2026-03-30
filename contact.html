@@ -85,7 +85,6 @@
       color: #3e5f5a;
     }
 
-    /* ✨ Footer-Links wie auf index.html */
     footer a {
       color: #1f3f3a;
       text-decoration: none;
@@ -101,22 +100,16 @@
 </head>
 <body>
 
-  <!-- Navigation laden -->
   <div id="nav-container"></div>
   <script>
     fetch('nav.html')
       .then(response => response.text())
-      .then(data => {
-        document.getElementById('nav-container').innerHTML = data;
-      })
-      .catch(err => console.error('Fehler beim Laden der Navigation:', err));
+      .then(data => { document.getElementById('nav-container').innerHTML = data; });
   </script>
 
-  <!-- Inhalt -->
   <h1>Kontakt</h1>
   <p>Ich freue mich über Anfragen zu Forschung, Vorträgen, Workshops oder anderen Kooperationen.</p>
 
-  <!-- Formular -->
   <form class="contact-page-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
     <input type="text" name="_gotcha" style="display:none">
     <input type="hidden" name="_redirect" value="danke.html">
