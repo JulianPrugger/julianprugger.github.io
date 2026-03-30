@@ -84,6 +84,19 @@
       font-size: 0.9em;
       color: #3e5f5a;
     }
+
+    /* ✨ Footer-Links wie auf index.html */
+    footer a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    footer a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
   </style>
 </head>
 <body>
@@ -105,14 +118,8 @@
 
   <!-- Formular -->
   <form class="contact-page-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
-    
-    <!-- Spam-Schutz -->
     <input type="text" name="_gotcha" style="display:none">
-
-    <!-- Weiterleitung nach Absenden -->
     <input type="hidden" name="_redirect" value="danke.html">
-
-    <!-- Betreff -->
     <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
 
     <label for="name">Name:</label>
