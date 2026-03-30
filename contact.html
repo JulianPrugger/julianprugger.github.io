@@ -20,6 +20,11 @@
       font-size: 2em;
       font-weight: normal;
       margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin-bottom: 1em;
     }
 
     /* Formular */
@@ -81,7 +86,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <!-- Navigation laden -->
@@ -97,15 +101,25 @@
 
   <!-- Inhalt -->
   <h1>Kontakt</h1>
-
   <p>Ich freue mich über Anfragen zu Forschung, Vorträgen, Workshops oder anderen Kooperationen.</p>
 
+  <!-- ✅ Kontaktformular -->
   <form class="contact-page-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
+    
+    <!-- Spam-Schutz -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Weiterleitung nach Absenden -->
+    <input type="hidden" name="_redirect" value="danke.html">
+
+    <!-- Betreff -->
+    <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
+
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
     <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="_replyto" required>
+    <input type="email" id="email" name="email" required>
 
     <label for="message">Nachricht:</label>
     <textarea id="message" name="message" rows="5" required></textarea>
