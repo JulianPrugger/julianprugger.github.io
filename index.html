@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julian Prugger</title>
+  <title>Essays, Interviews & Wissenschaftskommunikation – Julian Prugger</title>
 
   <style>
     body {
@@ -16,10 +16,21 @@
       background: #f6fbf9;
     }
 
+    a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
+
     h1 {
-      font-size: 2.4em;
+      font-size: 2.2em;
       font-weight: normal;
-      margin-bottom: 0.1em;
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
     }
 
     h2 {
@@ -37,91 +48,66 @@
     }
 
     ul {
-      list-style: none;
       padding-left: 0;
+      list-style: none;
     }
 
-    .header {
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-      margin-top: 0;
+    .section {
+      margin-bottom: 3em;
     }
 
-    .header-text {
-      flex: 1;
-    }
-
-    .portrait {
-      width: 160px;
-      height: auto;
-    }
-
-    a {
-      color: #1f3f3a;
-      text-decoration: none;
-      border-bottom: 1px solid #9bbab4;
-    }
-
-    a:hover {
-      border-bottom: 1px solid #1f3f3a;
-    }
-
-    @media (max-width: 700px) {
-      .header {
-        flex-direction: column;
-      }
-
-      .portrait {
-        width: 120px;
-      }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #3e5f5a;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
-<div id="nav-container"></div>
-<script>
-  fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('nav-container').innerHTML = data;
-    });
-</script>
+  <!-- Navigation laden -->
+  <div id="nav-container"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+      })
+      .catch(err => console.error('Fehler beim Laden der Navigation:', err));
+  </script>
 
-  <!-- Header -->
-  <div class="header">
-    <div class="header-text">
-      <h1>Julian Prugger</h1>
-      <p class="subtitle">Philosoph und Wissenschaftler</p>
-    </div>
-    <img src="portrait.jpg" alt="Julian Prugger" class="portrait">
+  <!-- Inhalt -->
+  <h1>Essays, Interviews & Wissenschaftskommunikation</h1>
+
+  <div class="section">
+    <ul>
+      <li>
+        <strong><a href="https://hfph.de/files/2021/10/thesenpapier_politics-in-search-of-evidence-2025-1.pdf" target="_blank">
+          Thesenpapier des DFG-Forschungsprojekts ‚Politics in Search of Evidence‘
+        </a></strong>
+      </li>
+      <li>
+        <strong><a href="https://www.tageblatt.lu/" target="_blank">
+          ‚Bettelverbot – Die repressive Seite des Neoliberalismus‘ – Interview im Luxemburger Tageblatt
+        </a></strong>
+      </li>
+      <li>
+        <strong>
+          <a target="_blank">
+            Profitmaximierung durch Bettelverbot. Über neoliberale Versicherheitlichung in München – Essay auf Kontrapunkte-Blog
+          </a>
+        </strong>
+      </li>
+      <li>
+        <strong><a href="https://www.buechergilde.de/shop/produkte/171902-wieder-denken-edition-zeitkritik-3" target="_blank">
+          Was gibt uns Sicherheit? Zur Rolle der Polizei nicht nur in Zeiten einer Pandemie
+        </a></strong>, in: Karin Hutflötz und Veronika Hilzensauer (Hrsg.), Wieder denken. Neue Fragen, andere Antworten, Perspektiven für die Zeit nach der Pandemie. Büchergilde Gutenberg.
+      </li>
+    </ul>
   </div>
 
-  <!-- Über mich -->
-  <h2>Über mich</h2>
-  <p>
-    Ich forsche interdisziplinär und transdisziplinär an der Schnittstelle von Philosophie und Public Health und versuche, wissenschaftliche Arbeit mit transformativem Handeln zu verbinden. Derzeit schließe ich meine Promotion ab, in der ich Selbstkritik als politische Praxis philosophisch rekonstruiere. Im Rahmen eines DFG-Projekts habe ich zu evidenzbasierter Gesundheitspolitik geforscht und publiziert – mit besonderem Interesse an der Frage, wie demokratische Legitimität und wissenschaftliche Expertise in Krisenzeiten zusammenwirken. Mich beschäftigt dabei auch, wie soziale Bewegungen und zivilgesellschaftliche Akteure an solchen Prozessen mitwirken können. In meiner zukünftigen Forschung möchte ich den Fokus stärker auf partizipative Ansätze legen – und auf die Frage, wie Wissenschaft aktiv zu gesellschaftlichem Wandel beitragen kann.
-  </p>
-
-  <!-- Forschung -->
-  <h2>Forschungsschwerpunkte</h2>
-  <ul>
-    <li><strong>Kritische Theorie und politische Philosophie:</strong> Meine theoretischen Grundlagen liegen in kritischer Theorie, insbesondere bei Foucault, sowie bei feministischen und analytisch-sozialen Ontologien (u.a. Haslanger). Hinzu kommen postkoloniale Ansätze und radikaldemokratische Theorien, mit denen ich Fragen von Macht, Subjektivität und widerständigem Handeln bearbeite.</li>
-
-    <li><strong>Selbstkritik als politische Praxis:</strong> Im Mittelpunkt meiner Dissertation steht die philosophische Rekonstruktion von Selbstkritik als verkörperter, relationaler und politisch wirksamer Praxis – in Auseinandersetzung mit Foucault, psychoanalytischen Ansätzen, feministischer Theorie sowie postkolonialen Perspektiven (u.a. Amy Allen, Frantz Fanon, Nikia Dhawan).</li>
-
-    <li><strong>Wissen, Demokratie und Public Health:</strong> Ausgehend von qualitativen Studien zu Selbstbildern von Public-Health-Wissenschaftler:innen habe ich diese Befunde zusammen mit Kolleg:innen philosophisch rekonstruiert. Der Fokus lag auf der COVID-19-Pandemie und auf der Frage der Preparedness für zukünftige Krisen.</li>
-
-    <li><strong>Versicherheitlichung und Sicherheitspolitik:</strong> Wie werden soziale Probleme wie Armut oder Migration zu Sicherheitsfragen umgedeutet, und welche Ausschlüsse produziert das? Ich bearbeite diese Fragen sowohl theoretisch als auch an konkreten Fallbeispielen wie Polizeigesetzen oder der Münchner Kommunalpolitik.</li>
-
-    <li><strong>Vertrauen in Wissenschaft und KI:</strong> In Zusammenarbeit mit Kolleg:innen habe ich zur Rolle von Vertrauen geforscht, insbesondere dazu, wie sich Vertrauen unter den Bedingungen von KI-Systemen verändert und welche Rolle Vertrauen in wissensbasierten Demokratien spielt – z.B. am Beispiel COVID-19 oder AIDS.</li>
-  </ul>
-
   <footer>
-    <a href="impressum.html">Impressum</a> | 
+    <a href="impressum.html">Impressum</a> |
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
