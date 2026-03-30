@@ -1,67 +1,127 @@
-<!-- Navigation-Snippet für alle Unterseiten -->
-<div id="nav-container"></div>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz – Julian Prugger</title>
 
-<style>
-  /* Navigation oben */
-  .top-nav {
-    position: sticky;
-    top: 0;
-    background-color: #f6fbf9;
-    border-bottom: 1px solid #cbd8d2;
-    padding: 0.6em 24px;
-    z-index: 100;
-    font-family: Georgia, "Times New Roman", serif;
-    margin-bottom: 1em;
-  }
-
-  .top-nav ul {
-    display: flex;           /* horizontal */
-    flex-wrap: wrap;
-    gap: 1.2em;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.95em;
-  }
-
-  .top-nav a {
-    color: #1f3f3a;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-
-  .top-nav a:hover {
-    border-bottom: 1px solid #1f3f3a;
-  }
-
-  @media (max-width: 700px) {
-    .top-nav ul {
-      flex-direction: column;
-      gap: 0.6em;
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      line-height: 1.7;
+      color: #0f1f1d;
+      background: #f6fbf9;
     }
-  }
-</style>
 
-<script>
-  fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-      const container = document.getElementById('nav-container');
-      container.innerHTML = data;
+    h1 {
+      font-size: 2.2em;
+      font-weight: normal;
+      margin-top: 0.5em;
+      margin-bottom: 0.3em;
+    }
 
-      // Kontakt-Link für das Formular aktivieren
-      const contactLinkNav = container.querySelector('#contact-link-nav');
-      const contactForm = container.querySelector('#contact-form');
-      if(contactLinkNav && contactForm){
-        contactLinkNav.addEventListener('click', function(e){
-          e.preventDefault();
-          contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-          if(contactForm.style.display === 'block'){
-            contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      }
-    })
-    .catch(err => console.error('Fehler beim Laden der Navigation:', err));
-</script>
+    h2 {
+      font-size: 1.3em;
+      margin-top: 2em;
+      margin-bottom: 0.8em;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #3e5f5a;
+    }
+
+    p, li {
+      margin: 0.6em 0;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section {
+      margin-bottom: 3em;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #3e5f5a;
+    }
+
+    footer a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    footer a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
+
+    a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation laden -->
+  <div id="nav-container"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('nav-container').innerHTML = data; });
+  </script>
+
+  <h1>Datenschutz</h1>
+
+  <div class="section">
+    <p>Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Nachfolgend informiere ich Sie über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf dieser Website.</p>
+
+    <h2>Verantwortlicher</h2>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+    <p><strong>Julian Prugger</strong><br>
+    E-Mail: <a href="mailto:info@julianprugger.de">info@julianprugger.de</a></p>
+
+    <h2>Erhebung und Verarbeitung personenbezogener Daten</h2>
+    <p>Beim Besuch dieser Website werden automatisch Daten wie Ihre IP-Adresse, Browsertyp und Datum/Zeit des Zugriffs erhoben. Diese Daten werden ausschließlich für die technische Verwaltung und Sicherheit der Website verwendet und nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>Kontaktformular</h2>
+    <p>Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) nur zur Bearbeitung Ihrer Anfrage gespeichert und nach Abschluss der Bearbeitung gelöscht. Die Übermittlung erfolgt über den Anbieter <a href="https://formspree.io" target="_blank">Formspree</a>.</p>
+
+    <h2>Cookies</h2>
+    <p>Diese Website verwendet keine Tracking-Cookies. Notwendige Session-Cookies für die Darstellung werden temporär gesetzt und nach Beenden der Sitzung gelöscht.</p>
+
+    <h2>Rechte der Nutzer:innen</h2>
+    <ul>
+      <li>Auskunft über die gespeicherten personenbezogenen Daten</li>
+      <li>Berichtigung unrichtiger Daten</li>
+      <li>Löschung oder Einschränkung der Verarbeitung</li>
+      <li>Widerspruch gegen die Verarbeitung</li>
+      <li>Datenübertragbarkeit</li>
+    </ul>
+    <p>Bei Fragen zum Datenschutz können Sie mich jederzeit unter der oben genannten E-Mail-Adresse kontaktieren.</p>
+
+    <h2>Speicherung und Löschung</h2>
+    <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für den angegebenen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen.</p>
+  </div>
+
+  <footer>
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
