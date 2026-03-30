@@ -76,58 +76,6 @@
       }
     }
 
-    /* Kontaktformular */
-    .contact-page-form {
-      margin-top: 2em;
-      padding: 1.5em;
-      background-color: #ffffff;
-      border: 1px solid #cbd8d2;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .contact-page-form label {
-      display: block;
-      margin-bottom: 0.3em;
-      font-weight: bold;
-      color: #3e5f5a;
-    }
-
-    .contact-page-form input,
-    .contact-page-form textarea {
-      width: 100%;
-      padding: 0.5em;
-      margin-bottom: 0.8em;
-      border: 1px solid #cbd8d2;
-      border-radius: 6px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1em;
-      color: #0f1f1d;
-      background-color: #f6fbf9;
-    }
-
-    .contact-page-form input:focus,
-    .contact-page-form textarea:focus {
-      outline: none;
-      border-color: #3e5f5a;
-      background-color: #ffffff;
-    }
-
-    .contact-page-form button {
-      background-color: #3e5f5a;
-      color: #ffffff;
-      border: none;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-page-form button:hover {
-      background-color: #2f4c44;
-    }
-
     footer {
       margin-top: 3em;
       font-size: 0.9em;
@@ -189,30 +137,6 @@
 
     <li><strong>Vertrauen in Wissenschaft und KI:</strong> In Zusammenarbeit mit Kolleg:innen habe ich zur Rolle von Vertrauen geforscht, insbesondere dazu, wie sich Vertrauen unter den Bedingungen von KI-Systemen verändert und welche Rolle Vertrauen in wissensbasierten Demokratien spielt – z.B. am Beispiel COVID-19 oder AIDS.</li>
   </ul>
-
-  <!-- Kontaktformular -->
-  <h2>Kontakt</h2>
-  <form class="contact-page-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
-    <!-- Spam-Schutz -->
-    <input type="text" name="_gotcha" style="display:none">
-
-    <!-- Weiterleitung nach Absenden -->
-    <input type="hidden" name="_redirect" value="danke.html">
-
-    <!-- Betreff -->
-    <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
-
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Nachricht:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Absenden</button>
-  </form>
 
   <footer>
     <a href="impressum.html">Impressum</a> | 
