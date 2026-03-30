@@ -1,6 +1,5 @@
-<!-- nav.html -->
 <style>
-  /* Navigation oben */
+/* Navigation oben */
 .top-nav {
   position: sticky;
   top: 0;
@@ -9,57 +8,37 @@
   padding: 0.6em 24px;
   z-index: 100;
   font-family: Georgia, "Times New Roman", serif;
-
-  margin-top: 1em;     /* 👈 NEU: sorgt für gleichen Abstand wie auf Startseite */
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
+.top-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95em;
+}
+
+.top-nav a {
+  color: #1f3f3a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.top-nav a:hover {
+  border-bottom: 1px solid #1f3f3a;
+}
+
+@media (max-width: 700px) {
   .top-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2em;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.95em;
+    flex-direction: column;
+    gap: 0.6em;
   }
-
-  .top-nav a {
-    color: #1f3f3a;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-
-  .top-nav a:hover {
-    border-bottom: 1px solid #1f3f3a;
-  }
-
-  @media (max-width: 700px) {
-    .top-nav ul {
-      flex-direction: column;
-      gap: 0.6em;
-    }
-  }
-
-  /* Kontaktformular */
-  #contact-form {
-    display: none;
-    margin-top: 1em;
-    padding: 1.5em;
-    background-color: #ffffff;
-    border: 1px solid #cbd8d2;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-
-  #contact-form label { display: block; margin-bottom: 0.3em; font-weight: bold; color: #3e5f5a; }
-  #contact-form input, #contact-form textarea {
-    width: 100%; padding: 0.5em; margin-bottom: 0.8em; border: 1px solid #cbd8d2; border-radius: 6px; font-family: Georgia, "Times New Roman", serif; font-size: 1em; color: #0f1f1d; background-color: #f6fbf9;
-  }
-  #contact-form input:focus, #contact-form textarea:focus { outline: none; border-color: #3e5f5a; background-color: #ffffff; }
-  #contact-form button { background-color: #3e5f5a; color: #ffffff; border: none; padding: 0.6em 1.2em; font-size: 1em; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; }
-  #contact-form button:hover { background-color: #2f4c44; }
+}
 </style>
 
 <nav class="top-nav">
@@ -70,32 +49,6 @@
     <li><a href="Vorträge.html">Vorträge</a></li>
     <li><a href="seminare.html">Seminare & Workshops</a></li>
     <li><a href="essays.html">Essays & Interviews</a></li>
-    <li><a href="#" id="contact-link-nav">Kontakt</a></li>
+    <li><a href="contact.html">Kontakt</a></li> <!-- ✅ jetzt korrekt auf contact.html -->
   </ul>
 </nav>
-
-<form id="contact-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="email">E-Mail:</label>
-  <input type="email" id="email" name="_replyto" required>
-
-  <label for="message">Nachricht:</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
-
-  <button type="submit">Absenden</button>
-</form>
-
-<script>
-  const contactLinkNav = document.getElementById('contact-link-nav');
-  const contactForm = document.getElementById('contact-form');
-
-  contactLinkNav.addEventListener('click', function(e) {
-    e.preventDefault();
-    contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-    if(contactForm.style.display === 'block') {
-      contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-</script>
