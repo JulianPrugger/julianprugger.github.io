@@ -20,7 +20,12 @@
     p, li { margin: 0.6em 0; }
     ul { list-style: none; padding-left: 0; }
 
-    .header { display: flex; align-items: flex-start; gap: 40px; margin-top: 1em; }
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 0;   /* 👈 vorher 1em → jetzt rausnehmen */
+}
     .header-text { flex: 1; }
     .portrait { width: 160px; height: auto; }
     a { color: #1f3f3a; text-decoration: none; border-bottom: 1px solid #9bbab4; }
