@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Essays, Interviews & Wissenschaftskommunikation – Julian Prugger</title>
+  <title>Julian Prugger</title>
 
   <style>
     body {
@@ -16,21 +16,10 @@
       background: #f6fbf9;
     }
 
-    a {
-      color: #1f3f3a;
-      text-decoration: none;
-      border-bottom: 1px solid #9bbab4;
-    }
-
-    a:hover {
-      border-bottom: 1px solid #1f3f3a;
-    }
-
     h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
       font-weight: normal;
-      margin-top: 0.5em;
-      margin-bottom: 0.3em;
+      margin-bottom: 0.1em;
     }
 
     h2 {
@@ -48,12 +37,95 @@
     }
 
     ul {
-      padding-left: 0;
       list-style: none;
+      padding-left: 0;
     }
 
-    .section {
-      margin-bottom: 3em;
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 0;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .portrait {
+      width: 160px;
+      height: auto;
+    }
+
+    a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
+
+    @media (max-width: 700px) {
+      .header {
+        flex-direction: column;
+      }
+      .portrait {
+        width: 120px;
+      }
+    }
+
+    /* Kontaktformular */
+    .contact-page-form {
+      margin-top: 2em;
+      padding: 1.5em;
+      background-color: #ffffff;
+      border: 1px solid #cbd8d2;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .contact-page-form label {
+      display: block;
+      margin-bottom: 0.3em;
+      font-weight: bold;
+      color: #3e5f5a;
+    }
+
+    .contact-page-form input,
+    .contact-page-form textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 0.8em;
+      border: 1px solid #cbd8d2;
+      border-radius: 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1em;
+      color: #0f1f1d;
+      background-color: #f6fbf9;
+    }
+
+    .contact-page-form input:focus,
+    .contact-page-form textarea:focus {
+      outline: none;
+      border-color: #3e5f5a;
+      background-color: #ffffff;
+    }
+
+    .contact-page-form button {
+      background-color: #3e5f5a;
+      color: #ffffff;
+      border: none;
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-page-form button:hover {
+      background-color: #2f4c44;
     }
 
     footer {
@@ -61,11 +133,24 @@
       font-size: 0.9em;
       color: #3e5f5a;
     }
+
+    footer a {
+      color: #1f3f3a;
+      text-decoration: none;
+      border-bottom: 1px solid #9bbab4;
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    footer a:hover {
+      border-bottom: 1px solid #1f3f3a;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation laden -->
+  <!-- Navigation -->
   <div id="nav-container"></div>
   <script>
     fetch('nav.html')
@@ -76,38 +161,61 @@
       .catch(err => console.error('Fehler beim Laden der Navigation:', err));
   </script>
 
-  <!-- Inhalt -->
-  <h1>Essays, Interviews & Wissenschaftskommunikation</h1>
-
-  <div class="section">
-    <ul>
-      <li>
-        <strong><a href="https://hfph.de/files/2021/10/thesenpapier_politics-in-search-of-evidence-2025-1.pdf" target="_blank">
-          Thesenpapier des DFG-Forschungsprojekts ‚Politics in Search of Evidence‘
-        </a></strong>
-      </li>
-      <li>
-        <strong><a href="https://www.tageblatt.lu/" target="_blank">
-          ‚Bettelverbot – Die repressive Seite des Neoliberalismus‘ – Interview im Luxemburger Tageblatt
-        </a></strong>
-      </li>
-      <li>
-        <strong>
-          <a target="_blank">
-            Profitmaximierung durch Bettelverbot. Über neoliberale Versicherheitlichung in München – Essay auf Kontrapunkte-Blog
-          </a>
-        </strong>
-      </li>
-      <li>
-        <strong><a href="https://www.buechergilde.de/shop/produkte/171902-wieder-denken-edition-zeitkritik-3" target="_blank">
-          Was gibt uns Sicherheit? Zur Rolle der Polizei nicht nur in Zeiten einer Pandemie
-        </a></strong>, in: Karin Hutflötz und Veronika Hilzensauer (Hrsg.), Wieder denken. Neue Fragen, andere Antworten, Perspektiven für die Zeit nach der Pandemie. Büchergilde Gutenberg.
-      </li>
-    </ul>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-text">
+      <h1>Julian Prugger</h1>
+      <p class="subtitle">Philosoph und Wissenschaftler</p>
+    </div>
+    <img src="portrait.jpg" alt="Julian Prugger" class="portrait">
   </div>
 
+  <!-- Über mich -->
+  <h2>Über mich</h2>
+  <p>
+    Ich forsche interdisziplinär und transdisziplinär an der Schnittstelle von Philosophie und Public Health und versuche, wissenschaftliche Arbeit mit transformativem Handeln zu verbinden. Derzeit schließe ich meine Promotion ab, in der ich Selbstkritik als politische Praxis philosophisch rekonstruiere. Im Rahmen eines DFG-Projekts habe ich zu evidenzbasierter Gesundheitspolitik geforscht und publiziert – mit besonderem Interesse an der Frage, wie demokratische Legitimität und wissenschaftliche Expertise in Krisenzeiten zusammenwirken. Mich beschäftigt dabei auch, wie soziale Bewegungen und zivilgesellschaftliche Akteure an solchen Prozessen mitwirken können. In meiner zukünftigen Forschung möchte ich den Fokus stärker auf partizipative Ansätze legen – und auf die Frage, wie Wissenschaft aktiv zu gesellschaftlichem Wandel beitragen kann.
+  </p>
+
+  <!-- Forschung -->
+  <h2>Forschungsschwerpunkte</h2>
+  <ul>
+    <li><strong>Kritische Theorie und politische Philosophie:</strong> Meine theoretischen Grundlagen liegen in kritischer Theorie, insbesondere bei Foucault, sowie bei feministischen und analytisch-sozialen Ontologien (u.a. Haslanger). Hinzu kommen postkoloniale Ansätze und radikaldemokratische Theorien, mit denen ich Fragen von Macht, Subjektivität und widerständigem Handeln bearbeite.</li>
+
+    <li><strong>Selbstkritik als politische Praxis:</strong> Im Mittelpunkt meiner Dissertation steht die philosophische Rekonstruktion von Selbstkritik als verkörperter, relationaler und politisch wirksamer Praxis – in Auseinandersetzung mit Foucault, psychoanalytischen Ansätzen, feministischer Theorie sowie postkolonialen Perspektiven (u.a. Amy Allen, Frantz Fanon, Nikia Dhawan).</li>
+
+    <li><strong>Wissen, Demokratie und Public Health:</strong> Ausgehend von qualitativen Studien zu Selbstbildern von Public-Health-Wissenschaftler:innen habe ich diese Befunde zusammen mit Kolleg:innen philosophisch rekonstruiert. Der Fokus lag auf der COVID-19-Pandemie und auf der Frage der Preparedness für zukünftige Krisen.</li>
+
+    <li><strong>Versicherheitlichung und Sicherheitspolitik:</strong> Wie werden soziale Probleme wie Armut oder Migration zu Sicherheitsfragen umgedeutet, und welche Ausschlüsse produziert das? Ich bearbeite diese Fragen sowohl theoretisch als auch an konkreten Fallbeispielen wie Polizeigesetzen oder der Münchner Kommunalpolitik.</li>
+
+    <li><strong>Vertrauen in Wissenschaft und KI:</strong> In Zusammenarbeit mit Kolleg:innen habe ich zur Rolle von Vertrauen geforscht, insbesondere dazu, wie sich Vertrauen unter den Bedingungen von KI-Systemen verändert und welche Rolle Vertrauen in wissensbasierten Demokratien spielt – z.B. am Beispiel COVID-19 oder AIDS.</li>
+  </ul>
+
+  <!-- Kontaktformular -->
+  <h2>Kontakt</h2>
+  <form class="contact-page-form" action="https://formspree.io/f/mwvwkkyj" method="POST">
+    <!-- Spam-Schutz -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Weiterleitung nach Absenden -->
+    <input type="hidden" name="_redirect" value="danke.html">
+
+    <!-- Betreff -->
+    <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Nachricht:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+
   <footer>
-    <a href="impressum.html">Impressum</a> |
+    <a href="impressum.html">Impressum</a> | 
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
