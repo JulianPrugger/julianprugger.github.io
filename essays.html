@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Essays, Interviews & Wissenschaftskommunikation</title>
+
   <style>
     body {
       font-family: Georgia, "Times New Roman", serif;
       max-width: 900px;
-      margin: 80px auto;
+      margin: 0 auto;              /* ✅ FIX wie pubs.html */
       padding: 0 24px;
       line-height: 1.7;
       color: #0f1f1d;
@@ -27,13 +28,14 @@
 
     h1 {
       font-size: 2.2em;
-      margin-bottom: 0.2em;
+      margin-top: 0;              /* ✅ konsistent */
+      margin-bottom: 0.3em;
       font-weight: normal;
     }
 
     h2 {
       font-size: 1.3em;
-      margin-top: 2em;
+      margin-top: 2.5em;
       margin-bottom: 0.8em;
       font-weight: normal;
       letter-spacing: 0.03em;
@@ -42,7 +44,7 @@
     }
 
     p, li {
-      margin: 0.5em 0;
+      margin: 0.6em 0;
     }
 
     ul {
@@ -51,90 +53,43 @@
     }
 
     .section {
-      margin-bottom: 2em;
+      margin-bottom: 3em;
     }
   </style>
 </head>
 
 <body>
 
-<!-- Navigation-Snippet für alle Unterseiten -->
-<div id="nav-container"></div>
+  <!-- ✅ Navigation IDENTISCH zu pubs.html -->
+  <div id="nav-container"></div>
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-container').innerHTML = data;
+      })
+      .catch(err => console.error('Fehler beim Laden der Navigation:', err));
+  </script>
 
-<style>
-  /* Navigation oben */
-  .top-nav {
-    position: sticky;
-    top: 0;
-    background-color: #f6fbf9;
-    border-bottom: 1px solid #cbd8d2;
-    padding: 0.6em 24px;
-    z-index: 100;
-    font-family: Georgia, "Times New Roman", serif;
-    margin-bottom: 1em;
-  }
-
-  .top-nav ul {
-    display: flex;           /* horizontal */
-    flex-wrap: wrap;
-    gap: 1.2em;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.95em;
-  }
-
-  .top-nav a {
-    color: #1f3f3a;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
-  }
-
-  .top-nav a:hover {
-    border-bottom: 1px solid #1f3f3a;
-  }
-
-  @media (max-width: 700px) {
-    .top-nav ul {
-      flex-direction: column;
-      gap: 0.6em;
-    }
-  }
-</style>
-
-<script>
-  fetch('nav.html')
-    .then(response => response.text())
-    .then(data => {
-      const container = document.getElementById('nav-container');
-      container.innerHTML = data;
-
-      // Kontakt-Link für das Formular aktivieren
-      const contactLinkNav = container.querySelector('#contact-link-nav');
-      const contactForm = container.querySelector('#contact-form');
-      if(contactLinkNav && contactForm){
-        contactLinkNav.addEventListener('click', function(e){
-          e.preventDefault();
-          contactForm.style.display = (contactForm.style.display === 'none' || contactForm.style.display === '') ? 'block' : 'none';
-          if(contactForm.style.display === 'block'){
-            contactForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      }
-    })
-    .catch(err => console.error('Fehler beim Laden der Navigation:', err));
-</script>
-
-  
   <h1>Essays, Interviews & Wissenschaftskommunikation</h1>
 
   <div class="section">
     <ul>
       <li><strong><a href="https://hfph.de/files/2021/10/thesenpapier_politics-in-search-of-evidence-2025-1.pdf" target="_blank">Thesenpapier des DFG-Forschungsprojekts ‚Politics in Search of Evidence‘</a></strong></li>
+      
       <li><strong><a href="https://www.tageblatt.lu/" target="_blank">‚Bettelverbot – Die repressive Seite des Neoliberalismus‘ – Interview im Luxemburger Tageblatt</a></strong></li>
+      
       <li><strong><a target="_blank">Profitmaximierung durch Bettelverbot. Über neoliberale Versicherheitlichung in München – Essay auf Kontrapunkte-Blog</a></strong></li>
-      <li><strong><a href="https://www.buechergilde.de/shop/produkte/171902-wieder-denken-edition-zeitkritik-3" target="_blank">Was gibt uns Sicherheit? Zur Rolle der Polizei nicht nur in Zeiten einer Pandemie</a></strong>, in: Karin Hutflötz und Veronika Hilzensauer (Hrsg.), Wieder denken. Neue Fragen, andere Antworten, Perspektiven für die Zeit nach der Pandemie. Büchergilde Gutenberg.</li>
+      
+      <li>
+        <strong>
+          <a href="https://www.buechergilde.de/shop/produkte/171902-wieder-denken-edition-zeitkritik-3" target="_blank">
+            Was gibt uns Sicherheit? Zur Rolle der Polizei nicht nur in Zeiten einer Pandemie
+          </a>
+        </strong>, 
+        in: Karin Hutflötz und Veronika Hilzensauer (Hrsg.), 
+        Wieder denken. Neue Fragen, andere Antworten, Perspektiven für die Zeit nach der Pandemie. Büchergilde Gutenberg.
+      </li>
     </ul>
   </div>
 
